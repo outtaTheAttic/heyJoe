@@ -2,9 +2,9 @@ import express from "express";
 
 const router = express.Router();
 
-router.get("/", (req,res) => {
- res.send("Hello, welcome to the website!\nThanks for coming!");
-})
+//router.get("/", (req,res) => {
+// res.send("Hello, welcome to the website!\nThanks for coming!");
+//})
 
 router.get("/signup", (req,res) => {
  res.send("Signup endpoint");
