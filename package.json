@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/outtaTheAttic/heyJoe#readme",
   "dependencies": {
+    "multer": "^2.0.2",
     "nodemailer": "^8.0.1"
   }
 }
