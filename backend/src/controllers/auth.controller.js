@@ -1,12 +1,11 @@
+import { ENV } from "../lib/env.js";
 import { createWelcomeEmail } from "../../../frontend/index.js";
-import { generateToken } from "../lib/utils.js";
-import { transporter } from "../lib/utils.js";
+import { generateToken, transporter } from "../lib/utils.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import fs from "fs";
-import "dotenv/config";
 
-const clientURL = process.env.CLIENT_URL;
+const clientURL = ENV.CLIENT_URI;
 
 export const signup = async (req,res) => {
 
@@ -114,11 +113,17 @@ export const login = async (req,res) => {
 		res.status(500).json({ message: "Internal server error" });
 	}
 
-}
+};
 
 export const logout = (_,res) => {
 
 	res.cookie("jwt", "", { maxAge: 0 });
 	res.status(200).json({ message: "Logged out successfully" });
 
-}
+};
+
+export const updateProfile = async (req,res) => {
+
+
+
+};
