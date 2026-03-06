@@ -3,7 +3,6 @@ import { createWelcomeEmail } from "../../../frontend/index.js";
 import { generateToken, transporter } from "../lib/utils.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
-import fs from "fs";
 import cloudinary from "../lib/cloudinary.js";
 
 const clientURL = ENV.CLIENT_URL;
@@ -49,8 +48,11 @@ export const signup = async (req,res) => {
 
 		if(newUser) {
 
-			generateToken(newUser._id, res);
-			await newUser.save();
+//			generateToken(newUser._id, res);
+//			await newUser.save();
+
+			const savedUser = await newUser.save();
+			generateToken(savedUser._id, res);
 
 			res.status(201).json({
 				_id: newUser._id,
@@ -63,10 +65,10 @@ export const signup = async (req,res) => {
 			(async () => {
 			  const info = await transporter.sendMail({
 			    from: '"Becoming Everyone" <joe@becomingeveryone.com>',
-			    to: newUser.email,
+			    to: savedUser.email,
 			    subject: "Hello ✔",
 			    text: "Hello world?", // Plain-text version of the message
-			    html: createWelcomeEmail(newUser.fullName,clientURL), // HTML version of the message
+			    html: createWelcomeEmail(savedUser.fullName,clientURL), // HTML version of the message
 			  });
 
 			  console.log("Message sent:", info.messageId);
