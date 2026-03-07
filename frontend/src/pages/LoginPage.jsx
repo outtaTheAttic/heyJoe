@@ -47,7 +47,7 @@ function LoginPage() {
 			  </div>
 			</div>
 			
-			{/* EMAIL INPUT */}
+			{/* PASSWORD INPUT */}
                          <div>
                           <label className="auth-input-label">Password</label>
                           <div className="relative">
@@ -86,7 +86,7 @@ function LoginPage() {
               		<div>
                 	<img
                   		src="/login.png"
-		                alt="People using mobile devices"
+		                alt="a nice photo"
                 		className="w-full h-auto object-contain"
 	                />
         	         <div className="mt-6 text-center">

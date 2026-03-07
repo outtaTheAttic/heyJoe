@@ -104,7 +104,7 @@ function SignupPage() {
 		 <div>
 		  <img
 		   src="/signup.png"
-		   alt="People using mobile devices"
+		   alt="a nice photo"
 		   className="w-full h-auto object-contain"
 		  />
 		  <div className="mt-6 text-center">
