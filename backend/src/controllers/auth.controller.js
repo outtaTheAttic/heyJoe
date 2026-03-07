@@ -1,6 +1,5 @@
 import { ENV } from "../lib/env.js";
-import { createWelcomeEmail } from "../../../frontend/index.js";
-import { generateToken, transporter } from "../lib/utils.js";
+import { createWelcomeEmail, generateToken, transporter } from "../lib/utils.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import cloudinary from "../lib/cloudinary.js";
