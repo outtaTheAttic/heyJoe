@@ -20,7 +20,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
 // make ready for deployment
-if (ENV.NODE_ENV === "production") {
+if (ENV.NODE_ENV === "omit=dev") {
 	app.use(express.static(path.join(_dirname, "../frontend/dist")));
 
 	app.get("*s", (_,res) => {
