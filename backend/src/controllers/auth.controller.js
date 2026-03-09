@@ -4,7 +4,6 @@ import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import cloudinary from "../lib/cloudinary.js";
 
-const clientURL = ENV.CLIENT_URL;
 
 export const signup = async (req,res) => {
 
@@ -67,7 +66,7 @@ export const signup = async (req,res) => {
 			    to: savedUser.email,
 			    subject: "Hello ✔",
 			    text: "Hello world?", // Plain-text version of the message
-			    html: createWelcomeEmail(savedUser.fullName,clientURL), // HTML version of the message
+			    html: createWelcomeEmail(savedUser.fullName,ENV.CLIENT_URL), // HTML version of the message
 			  });
 
 			  console.log("Message sent:", info.messageId);
