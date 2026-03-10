@@ -18,10 +18,7 @@ function App() {
 
   return (
 
-	<div className=" min-h-screen bg-navy-900 relative flex items-center justify-center p-4 overflow-hidden">
-
-	{/* DECORATORS - GRID BG & GLOW SHAPES ...(NO GLOW SHAPES) */}
-        <div className=" absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_2px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_2px,transparent_1px)] bg-[size:14px_24px]" />
+	<div className="absolute min-h-screen bg-navy-900 relative flex items-center justify-center p-4 overflow-hidden">
 
 	  <Routes>
 
@@ -32,6 +29,7 @@ function App() {
 	  </Routes>
 
 	  <Toaster />
+
 
 	</div>
 

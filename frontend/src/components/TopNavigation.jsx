@@ -10,7 +10,7 @@ import useDarkMode from '../hooks/useDarkMode';
 
 const TopNavigation = () => {
   return (
-    <div className='top-navigation'>
+    <div className="flex">
       <HashtagIcon />
       <Title />
       <ThemeIcon />

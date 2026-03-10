@@ -16,7 +16,9 @@ const ContentContainer = () => {
   const { activeTab, selectedUser } = useChatStore();
 
   return (
-    <div className='content-container'>
+   <div className="overflow-auto">
+     <TopNavigation />
+	<div className="flex">
         <div className="w-80 bg-slate-800/50 backdrop-blur-sm flex flex-col">
           <ProfileHeader />
           <ActiveTabSwitch />
@@ -25,13 +27,13 @@ const ContentContainer = () => {
             {activeTab === "chats" ? <ChatsList /> : <ContactList />}
           </div>
         </div>
-	<div className='content-list flex flex-row space-around'>
-	  <TopNavigation />
+	<div className='flex flex-row space-around'>
 	  <div className="flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm">
             {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
           </div>
 	</div>
-    </div>
+	</div>
+   </div>
   );
 }
 export default ContentContainer;
