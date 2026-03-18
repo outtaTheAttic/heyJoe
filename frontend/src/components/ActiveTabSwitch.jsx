@@ -4,11 +4,11 @@ function ActiveTabSwitch() {
   const { activeTab, setActiveTab } = useChatStore();
 
   return (
-    <div className="tabs tabs-boxed bg-transparent p-2 m-2">
+    <div className="bg-transparent p-2 m-2">
       <button
         onClick={() => setActiveTab("chats")}
         className={`tab ${
-          activeTab === "chats" ? "bg-cyan-500/20 text-cyan-400" : "text-slate-400"
+          activeTab === "chats" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
         }`}
       >
         Chats
@@ -17,7 +17,7 @@ function ActiveTabSwitch() {
       <button
         onClick={() => setActiveTab("contacts")}
         className={`tab ${
-          activeTab === "contacts" ? "bg-cyan-500/20 text-cyan-400" : "text-slate-400"
+          activeTab === "contacts" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
         }`}
       >
         Contacts

@@ -18,7 +18,7 @@ function App() {
 
   return (
 
-	<div className="absolute min-h-screen bg-navy-900 relative flex items-center justify-center p-4 overflow-hidden">
+	<div className="absolute min-h-screen bg-stone-500 relative flex items-center justify-center p-4 overflow-hidden">
 
 	  <Routes>
 

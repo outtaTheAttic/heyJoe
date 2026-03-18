@@ -1,5 +1,6 @@
 import { ENV } from "../lib/env.js";
-import { createWelcomeEmail, generateToken, transporter } from "../lib/utils.js";
+import { sendWelcomeEmail } from "../emails/emailHandlers.js";
+import { generateToken } from "../lib/utils.js";
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import cloudinary from "../lib/cloudinary.js";
@@ -59,18 +60,12 @@ export const signup = async (req,res) => {
 				profilePic: newUser.profilePic
 			});
 
-			// Send an email using async/await
-			(async () => {
-			  const info = await transporter.sendMail({
-			    from: '"Becoming Everyone" <joe@becomingeveryone.com>',
-			    to: savedUser.email,
-			    subject: "Hello ✔",
-			    text: "Hello world?", // Plain-text version of the message
-			    html: createWelcomeEmail(savedUser.fullName,ENV.CLIENT_URL), // HTML version of the message
-			  });
+			try {
+				await sendWelcomeEmail(savedUser.email, savedUser.fullName, ENV.CLIENT_URL);
+			} catch (error) {
+				console.error("Failed to send welcome email:", error);
+			}
 
-			  console.log("Message sent:", info.messageId);
-			})();
 
 		} else {
 
