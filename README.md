@@ -1,2 +1,2 @@
-This is a chat app I built following Burak Orkmez's awesome youtube video. You should check out his video here! -->[![Check it out](https://img.youtube.com/vi/bR4b_Io8shE/maxresdefault.jpg)](https://www.youtube.com/watch?v=bR4b_Io8shE){:target="_blank"}
+This is a chat app I built following Burak Orkmez's awesome youtube video. You should check out his video here! --> <a href="https://www.youtube.com/watch?v=bR4b_Io8shE" target="_blank"><img src="https://img.youtube.com/vi/bR4b_Io8shE/maxresdefault.jpg" alt="youtube vid" width="320" height="180"></a>
 You can check out my version at https://heyjoe.sevalla.app .I made a bunch of my own tweaks, mostly aesthetically. I am currently working on adding Groups functionality.
