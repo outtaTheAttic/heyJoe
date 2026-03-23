@@ -11,6 +11,7 @@ const io = new Server(server, {
 	cors: {
 		origin: [ENV.CLIENT_URL],
 		credentials: true,
+		privateNetwork: true,
 	},
 });
 

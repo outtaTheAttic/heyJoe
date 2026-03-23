@@ -6,22 +6,33 @@ function ActiveTabSwitch() {
   return (
     <div className="bg-transparent p-2 m-2">
       <button
-        onClick={() => setActiveTab("chats")}
+        onClick={() => setActiveTab("Contacts")}
         className={`tab ${
-          activeTab === "chats" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
+          activeTab === "Contacts" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
+        }`}
+      >
+        Contacts
+      </button>
+
+      <button
+        onClick={() => setActiveTab("Chats")}
+        className={`tab ${
+          activeTab === "Chats" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
         }`}
       >
         Chats
       </button>
 
       <button
-        onClick={() => setActiveTab("contacts")}
+        onClick={() => setActiveTab("Groups")}
         className={`tab ${
-          activeTab === "contacts" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
+          activeTab === "Groups" ? "bg-amber-500/20 text-slate-200 rounded" : "text-slate-400"
         }`}
       >
-        Contacts
+        Groups
       </button>
+
+
     </div>
   );
 }

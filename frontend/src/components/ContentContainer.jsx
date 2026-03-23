@@ -5,6 +5,7 @@ import ProfileHeader from "./ProfileHeader";
 import ActiveTabSwitch from "./ActiveTabSwitch";
 import ChatsList from "./ChatsList";
 import ContactList from "./ContactList";
+import GroupsList from "./GroupsList";
 import ChatContainer from "./ChatContainer";
 import NoConversationPlaceholder from "./NoConversationPlaceholder";
 import { BsPlusCircleFill } from 'react-icons/bs';
@@ -24,8 +25,10 @@ const ContentContainer = () => {
           <ActiveTabSwitch />
 
           <div className="flex-1 overflow-y-auto max-h-[500px] p-4 space-y-2">
-            {activeTab === "chats" ? <ChatsList /> : <ContactList />}
-          </div>
+
+	      { activeTab === "Chats" ? <ChatsList /> : activeTab === "Groups" ? <GroupsList /> : <ContactList /> }	  
+
+	  </div>
         </div>
 	<div className='p-6 sm:border-l border-slate-700/50 sm:max-w-[300px]'>
 	  <div className="flex flex-col">

@@ -4,4 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+/* server: {
+    host: true, // Listen on all network interfaces (0.0.0.0)
+    allowedHosts: [
+      'heyjoechat.com',
+      'home.heyjoechat.com',
+    ],
+    hmr: {
+      clientPort: 443,
+      protocol: 'wss',
+    },
+  },
+*/
+});

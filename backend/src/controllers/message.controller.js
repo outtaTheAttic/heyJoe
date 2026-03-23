@@ -100,6 +100,19 @@ export const sendMessage = async (req,res) => {
 
 };
 
+export const getGroups = async (req,res) => {
+
+	try {
+		const loggedInUserId = req.user._id;
+
+
+
+	}catch (error){
+
+	}
+
+};
+
 export const getChatPartners = async (req,res) => {
 
 	try {

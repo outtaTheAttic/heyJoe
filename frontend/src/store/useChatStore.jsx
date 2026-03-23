@@ -8,9 +8,11 @@ export const useChatStore = create((set, get) => ({
 
 	allContacts: [],
 	chats: [],
-	messages: [],
-	activeTab: "chats",
 	selectedUser: null,
+	groups: [],
+	selectedGroup: null,
+	activeTab: "",
+	messages: [],
 	isUsersLoading: false,
 	isMessagesLoading: false,
 	isSoundEnabled: localStorage.getItem("isSoundEnabled") === true,
@@ -22,6 +24,7 @@ export const useChatStore = create((set, get) => ({
 
 	setActiveTab: (tab) => set({ activeTab: tab }),
 	setSelectedUser: (selectedUser) => set({ selectedUser }),
+	setSelectedGroup: (selectedGroup) => set ({ selectedGroup }),
 
 	getAllContacts: async() => {
 		set({ isUsersLoading: true });
@@ -47,6 +50,18 @@ export const useChatStore = create((set, get) => ({
 			set({ isUsersLoading: false });
 		}
 
+	},
+
+	getMyGroups: async() => {
+		set({ isUsersLoading: true });
+		try {
+			const res = await axiosInstance.get("/messages/groups");
+			set({ groups: res.data });
+		} catch(error){
+			toast.error(error.response.data.message);
+		}finally {
+			set({ isUsersLoading: false });
+		}
 	},
 
 	getMessagesByUserId: async (userId) => {
