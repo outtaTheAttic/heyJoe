@@ -11,7 +11,7 @@ export const useChatStore = create((set, get) => ({
 	selectedUser: null,
 	groups: [],
 	selectedGroup: null,
-	activeTab: "",
+	activeTab: "Contacts",
 	messages: [],
 	isUsersLoading: false,
 	isMessagesLoading: false,
